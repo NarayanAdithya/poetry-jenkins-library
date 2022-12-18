@@ -7,19 +7,19 @@ class Poetry implements Serializable{
     Poetry(script){
         this.script = script
     }
-    def PoetryInstallDevDeps{
+    def PoetryInstallDevDeps(){
         script.sh "poetry install"
     }
-    def PoetryLint{
+    def PoetryLint(){
         script.sh "poetry run flake8 ."
     }
-    def PoetryBandit{
+    def PoetryBandit(){
         script.sh 'poetry run bandit -r . -c "pyproject.toml"'
     }
-    def PoetryTest{
+    def PoetryTest(){
         script.sh "poetry run pytest"
     }
-    def PoetryBump{
+    def PoetryBump(){
         script.sh "poetry version patch"
     }
 }
